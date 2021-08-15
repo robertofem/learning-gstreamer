@@ -24,3 +24,12 @@ gcc basic-tutorial-7.c -o basic-tutorial-7 `pkg-config --cflags --libs gstreamer
 gcc basic-tutorial-8.c -o basic-tutorial-8 `pkg-config --cflags --libs gstreamer-1.0 gstreamer-audio-1.0`
 gcc basic-tutorial-9.c -o basic-tutorial-9 `pkg-config --cflags --libs gstreamer-1.0 gstreamer-pbutils-1.0`
 ```
+
+Aravis Tests
+------------
+
+Tests mixing GStreamer and Aravis.
+
+```
+gcc arv2screen.c -o arv2screen `pkg-config --cflags --libs gstreamer-1.0`
+```
