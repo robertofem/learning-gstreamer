@@ -30,6 +30,30 @@ Aravis Tests
 
 Tests mixing GStreamer and Aravis.
 
+Install Aravis 0.8 with GStreamer support:
+
+```
+meson build
+cd build
+meson configure -Dgst-plugin='enabled'
+ninja
+ninja install
+```
+
+Add folder where Aravis 0.8 plugin for GStreamer is installed:
+
+```
+export GST_PLUGIN_PATH=/usr/local/lib/x86_64-linux-gnu/
+```
+
+If needed add the folder of the aravis library file:
+
+```
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib/x86_64-linux-gnu/
+```
+
+Finally compile with:
+
 ```
 gcc arv2screen.c -o arv2screen `pkg-config --cflags --libs gstreamer-1.0`
 ```

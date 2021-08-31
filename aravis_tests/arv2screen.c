@@ -15,6 +15,7 @@ int main(int argc, char *argv[]) {
   vidconvert = gst_element_factory_make ("videoconvert", "video_convert");
   vidsink = gst_element_factory_make ("xvimagesink", "video_sink");
 
+
   /* Create the empty pipeline */
   pipeline = gst_pipeline_new ("arv2screen-pipeline");
 
@@ -24,7 +25,11 @@ int main(int argc, char *argv[]) {
   }
 
   /* Configure elements */
-  //g_object_set (arvsrc, "exposure-auto", 1, NULL);
+  //g_object_set (arvsrc, "features", "Width=800 Height=800 PixelFormat='Mono8'", NULL);
+
+  //g_object_set (arvsrc, "exposure-auto", "false", NULL);
+  //g_object_set (arvsrc, "exposure", 5.000, NULL);
+
 
   /* Link elements  */
   gst_bin_add_many (GST_BIN (pipeline), arvsrc, vidqueue, vidconvert, vidsink, NULL);
